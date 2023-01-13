@@ -1,7 +1,7 @@
 import React from "react";
 
-import { KeyboardListView } from "./components";
+import { KeyboardAware } from "./components";
 
 export default function App() {
-  return <KeyboardListView />;
+  return <KeyboardAware />;
 }
