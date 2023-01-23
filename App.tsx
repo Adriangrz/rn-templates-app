@@ -1,7 +1,13 @@
 import React from "react";
 
-import { KeyboardAware } from "./components";
+import { KeyboardListView } from "./components";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 export default function App() {
-  return <KeyboardAware />;
+  return (
+    // @ts-ignore
+    <ThemeProvider>
+      <KeyboardListView />
+    </ThemeProvider>
+  );
 }

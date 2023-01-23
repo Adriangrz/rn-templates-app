@@ -9,6 +9,7 @@ import {
   TextInput,
   View,
 } from "react-native";
+import { useTheme } from "../providers/ThemeProvider";
 
 type ItemProps = {
   title: string;
@@ -23,13 +24,20 @@ const Item = ({ title }: ItemProps) => (
 );
 
 export const KeyboardListView = () => {
+  const theme = useTheme();
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
     >
       <SafeAreaView style={styles.container}>
-        <View style={styles.container}>
+        <View
+          style={[
+            styles.container,
+            { backgroundColor: theme.palette.primary.light },
+          ]}
+        >
           <FlatList
             data={items}
             renderItem={({ item }) => <Item title={item} />}
